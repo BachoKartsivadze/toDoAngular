@@ -15,6 +15,7 @@ export class ListBarComponent {
       name: this.listBarText,
       id: this.list.length + 1,
       isActive: false,
+      dueDate: new Date(),
     };
     this.list.push(newItem);
     this.listBarText = ''; // Clear the input field after adding the item

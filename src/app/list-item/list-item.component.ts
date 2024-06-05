@@ -9,6 +9,7 @@ export class ListItemComponent {
   @Input() name: string = 'no name';
   @Input() id: number = 0;
   @Input() isActive: boolean = false;
+  @Input() dueDate: Date = new Date();
 
   @Output() delete = new EventEmitter<number>();
 

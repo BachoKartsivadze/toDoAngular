@@ -1,5 +1,8 @@
 <div class="main">
-  <p>name - {{ name }}; ID - {{ id }}; status - {{ isActive }};</p>
+  <p>
+    name - {{ name }}; ID - {{ id }}; status - {{ isActive }}; Date -
+    {{ dueDate | date : "short" }}
+  </p>
   @if (isActive === true){
   <button (click)="changeActiveStatus()" class="activeButton">
     InActivate
