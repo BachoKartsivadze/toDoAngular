@@ -1,1 +1,13 @@
-<p>{{ name }}, {{ id }}, {{ isActive }}</p>
+<div class="main">
+  <p>name - {{ name }}; ID - {{ id }}; status - {{ isActive }};</p>
+  @if (isActive === true){
+  <button (click)="changeActiveStatus()" class="activeButton">
+    InActivate
+  </button>
+  } @else {
+  <button (click)="changeActiveStatus()" class="inactiveButton">
+    Activate
+  </button>
+  }
+  <button (click)="deleteItem()" class="deleteButton">Delete</button>
+</div>

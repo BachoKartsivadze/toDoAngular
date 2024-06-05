@@ -3,11 +3,13 @@
   <button (click)="createListItem()">Add Item</button>
 </div>
 
-@for (item of list; track item.id) {
-<app-list-item
-  [name]="item.name"
-  [id]="item.id"
-  [isActive]="item.isActive"
-></app-list-item>
-
-}
+<div class="itemList">
+  @for (item of list; track item.id) {
+  <app-list-item
+    [name]="item.name"
+    [id]="item.id"
+    [isActive]="item.isActive"
+    (delete)="deleteListItem($event)"
+  ></app-list-item>
+  }
+</div>

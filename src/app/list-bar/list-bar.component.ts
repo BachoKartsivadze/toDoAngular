@@ -19,4 +19,8 @@ export class ListBarComponent {
     this.list.push(newItem);
     this.listBarText = ''; // Clear the input field after adding the item
   }
+
+  deleteListItem(id: number) {
+    this.list = this.list.filter((item) => item.id !== id);
+  }
 }

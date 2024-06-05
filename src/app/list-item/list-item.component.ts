@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-list-item',
@@ -9,4 +9,14 @@ export class ListItemComponent {
   @Input() name: string = 'no name';
   @Input() id: number = 0;
   @Input() isActive: boolean = false;
+
+  @Output() delete = new EventEmitter<number>();
+
+  changeActiveStatus() {
+    this.isActive = !this.isActive;
+  }
+
+  deleteItem() {
+    this.delete.emit(this.id);
+  }
 }

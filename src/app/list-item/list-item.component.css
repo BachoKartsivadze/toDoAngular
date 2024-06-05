@@ -6,23 +6,42 @@ p {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 5px;
-}
-
-.list-item.active {
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-}
-
-p {
   font-weight: bold;
   margin-right: 10px;
+  flex: 1; /* Make the paragraph take up available space */
+  max-width: 500px; /* Set a maximum width */
 }
 
-.list-item.name {
-  flex-grow: 1;
+.activeButton {
+  background-color: chocolate;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.list-item.active {
-  color: #28a745;
-  font-weight: bold;
+.inactiveButton {
+  background-color: #28a745;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Align items vertically */
+  gap: 10px; /* Add space between the elements */
+}
+
+.deleteButton {
+  background-color: crimson;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
