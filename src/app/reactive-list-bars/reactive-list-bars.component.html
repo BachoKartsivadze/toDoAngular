@@ -1,0 +1,22 @@
+<div class="list-bar-container">
+  <form [formGroup]="listForm" (ngSubmit)="createListItem()">
+    <input
+      type="text"
+      formControlName="listBarText"
+      placeholder="Enter item name"
+    />
+    <button type="submit" [disabled]="listForm.invalid">Add Item</button>
+  </form>
+</div>
+
+<div class="itemList">
+  @for (item of list; track item.id) {
+  <app-list-item
+    [name]="item.name"
+    [id]="item.id"
+    [isActive]="item.isActive"
+    [dueDate]="item.dueDate"
+    (delete)="deleteListItem($event)"
+  ></app-list-item>
+  }
+</div>
