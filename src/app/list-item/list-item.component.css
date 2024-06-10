@@ -13,21 +13,11 @@ p {
 }
 
 .activeButton {
-  background-color: chocolate;
-  padding: 10px 20px;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: rgb(255, 203, 135);
 }
 
 .inactiveButton {
-  background-color: #28a745;
-  padding: 10px 20px;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #81f59c;
 }
 
 .main {
@@ -37,11 +27,11 @@ p {
   gap: 10px; /* Add space between the elements */
 }
 
-.deleteButton {
+/* .deleteButton {
   background-color: crimson;
   padding: 10px 20px;
   border: none;
   color: white;
   border-radius: 5px;
   cursor: pointer;
-}
+} */

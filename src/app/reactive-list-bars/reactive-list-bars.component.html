@@ -1,22 +1,56 @@
 <div class="list-bar-container">
   <form [formGroup]="listForm" (ngSubmit)="createListItem()">
-    <input
+    <!-- <input
       type="text"
       formControlName="listBarText"
       placeholder="Enter item name"
-    />
-    <button type="submit" [disabled]="listForm.invalid">Add Item</button>
+    /> -->
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Enter item name</mat-label>
+      <input
+        matInput
+        formControlName="listBarText"
+        placeholder="Enter item name"
+      />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        [matDatepicker]="picker"
+        formControlName="dueDate"
+        placeholder="Choose a due date"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <!-- <button type="submit" [disabled]="listForm.invalid">Add Item</button> -->
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="listForm.invalid"
+    >
+      Add Item
+    </button>
   </form>
 </div>
 
 <div class="itemList">
   @for (item of list; track item.id) {
   <app-list-item
-    [name]="item.name"
-    [id]="item.id"
-    [isActive]="item.isActive"
-    [dueDate]="item.dueDate"
+    [data]="item"
     (delete)="deleteListItem($event)"
   ></app-list-item>
   }
 </div>
+
+<!-- <mat-list>
+  <mat-list-item *ngFor="let item of list; trackBy: listForm.value.id">
+    <app-list-item
+      [data]="item"
+      (delete)="deleteListItem($event)"
+    ></app-list-item>
+  </mat-list-item>
+</mat-list> -->

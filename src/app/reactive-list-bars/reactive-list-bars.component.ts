@@ -16,6 +16,7 @@ export class ReactiveListBarComponent implements OnInit {
   ngOnInit(): void {
     this.listForm = this.fb.group({
       listBarText: ['', Validators.required],
+      dueDate: [null, Validators.required],
     });
   }
 
@@ -25,7 +26,7 @@ export class ReactiveListBarComponent implements OnInit {
         name: this.listForm.value.listBarText,
         id: this.list.length + 1,
         isActive: false,
-        dueDate: new Date(),
+        dueDate: this.listForm.value.dueDate,
       };
       this.list.push(newItem);
       this.listForm.reset();

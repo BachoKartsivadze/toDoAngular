@@ -1,9 +1,10 @@
 <div class="main">
   <p>
-    name - {{ name }}; ID - {{ id }}; status - {{ isActive }}; Date -
-    {{ dueDate | date : "short" }}
+    name - {{ data?.name }}; ID - {{ data?.id }}; status - {{ data?.isActive }};
+    Date -
+    {{ data?.dueDate | date : "MM/dd/yyyy" }}
   </p>
-  @if (isActive === true){
+  <!-- @if (data?.isActive === true){
   <button (click)="changeActiveStatus()" class="activeButton">
     InActivate
   </button>
@@ -11,6 +12,34 @@
   <button (click)="changeActiveStatus()" class="inactiveButton">
     Activate
   </button>
-  }
-  <button (click)="deleteItem()" class="deleteButton">Delete</button>
+  } -->
+
+  <!-- <button
+    (click)="changeActiveStatus()"
+    [ngClass]="{
+      activeButton: data?.isActive,
+      inactiveButton: !data?.isActive
+    }"
+  >
+    {{ data?.isActive ? "Inactivate" : "Activate" }}
+  </button> -->
+
+  <button
+    mat-raised-button
+    type="submit"
+    (click)="changeActiveStatus()"
+    [ngClass]="{
+      activeButton: data?.isActive,
+      inactiveButton: !data?.isActive
+    }"
+  >
+    {{ data?.isActive ? "Inactivate" : "Activate" }}
+  </button>
+
+  <!-- <button (click)="deleteItem()" class="deleteButton">Delete</button> -->
+  <mat-list-item class="list-item">
+    <button mat-icon-button color="warn" (click)="deleteItem()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
 </div>
