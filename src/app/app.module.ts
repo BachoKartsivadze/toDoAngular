@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 //import { ListBarComponent } from './list-bar/list-bar.component';
 import { ListItemComponent } from './list-item/list-item.component';
@@ -16,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [AppComponent, ReactiveListBarComponent, ListItemComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
